@@ -53,7 +53,11 @@ $estadosBrasileiros = array(
 		var event_data ='';
 		
 		event_data += '<div class="card" style="width: 16rem; border-radius: 4.25rem;">';
-		event_data += '<br><div style="text-align: center;"><img height="200" width="200" style="border-radius: 2.25rem;" src="<?php echo base_url()?>/fotos/'+value.foto+'"></div>';
+		if (value.foto == ''){
+			event_data += '<br><div style="text-align: center;"><img height="200" width="200" style="border-radius: 2.25rem;" src="<?php echo base_url()?>/images/user.png"></div>';
+		}else {
+			event_data += '<br><div style="text-align: center;"><img height="200" width="200" style="border-radius: 2.25rem;" src="<?php echo base_url()?>/fotos/'+value.foto+'"></div>';
+		}
 		event_data += '<div class="card-body">';
 		event_data += '<h5 class="card-title" style="max-width: 34ch; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">'+value.nome+' '+value.sobrenome+'</h5>';
 		event_data += '<p class="card-text">Telefone: '+value.telefone+'<br>Email: '+value.email+'</p>';
@@ -193,7 +197,11 @@ $estadosBrasileiros = array(
 			success: function(data){
 				var event_data = '';
 				var event_data_uf ='';
-				event_data += '<img height="200" width="200" style="border-radius: 2.25rem;" src="fotos/'+data.contato.foto+'">';
+				if (data.contato.foto == ''){
+					event_data += '<img height="200" width="200" style="border-radius: 2.25rem;" src="images/user.png">';
+				}else {
+					event_data += '<img height="200" width="200" style="border-radius: 2.25rem;" src="fotos/'+data.contato.foto+'">';
+				}
 
 				event_data_uf += '<label class="control-label"><label for="uf">UF</label></label>';
 				event_data_uf += '<select class="form-control" id="uf_edit" name="uf_edit">';
