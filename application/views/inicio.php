@@ -53,7 +53,7 @@ $estadosBrasileiros = array(
 		var event_data ='';
 		
 		event_data += '<div class="card" style="width: 16rem; border-radius: 4.25rem;">';
-		if (value.foto == ''){
+		if (value.foto == '' || value.foto == null){
 			event_data += '<br><div style="text-align: center;"><img height="200" width="200" style="border-radius: 2.25rem;" src="<?php echo base_url()?>/images/user.png"></div>';
 		}else {
 			event_data += '<br><div style="text-align: center;"><img height="200" width="200" style="border-radius: 2.25rem;" src="<?php echo base_url()?>/fotos/'+value.foto+'"></div>';
@@ -197,7 +197,7 @@ $estadosBrasileiros = array(
 			success: function(data){
 				var event_data = '';
 				var event_data_uf ='';
-				if (data.contato.foto == ''){
+				if (data.contato.foto == '' || data.contato.foto == null){
 					event_data += '<img height="200" width="200" style="border-radius: 2.25rem;" src="images/user.png">';
 				}else {
 					event_data += '<img height="200" width="200" style="border-radius: 2.25rem;" src="fotos/'+data.contato.foto+'">';
